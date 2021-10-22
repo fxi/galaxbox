@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>galaxbox</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <script
+      type="text/javascript"
+      src="https://api.mapbox.com/mapbox-gl-js/v2.6.0-beta.1/mapbox-gl.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://api.mapbox.com/mapbox-gl-js/v2.6.0-beta.1/mapbox-gl.css"
+    />
+
+    <style type="text/css">
+      html,
+      body,
+      #map {
+        width: 100%;
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+        font-family: system-ui;
+      }
+
+      body {
+        background-color: #191d26;
+        background: url('img/galaxy-infinity-milky-way-orbit.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      .ctrl {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        border-radius: 10px;
+        padding: 20px;
+        background: #000;
+        color: #999;
+        backdrop-filter: blur(2px);
+      }
+      .ctr input:checked {
+        backdrop-filter: blur(0px);
+      }
+
+      .ctrl input {
+        accent-color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map" class="mapboxgl-map"></div>
+    <div class="ctrl">
+      <label for="start">start/stop</label> <input id="start" type="checkbox" />
+    </div>
+
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
