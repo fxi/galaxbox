@@ -1,6 +1,8 @@
 
 const elInput = document.getElementById('start');
-
+const elAudio = document.createElement('audio');
+elAudio.src = './audio/backaudio.m4a';
+elAudio.loop = true;
 mapboxgl.accessToken = 'pk.eyJ1IjoiaGVsc2lua2kiLCJhIjoiY2puZW5rZ3N6MGRzYzNwb3drOW12MWEzdyJ9.IZC03hW3hKtBcbMgD0_KPw';
 const map = new mapboxgl.Map({
   container: 'map',
@@ -30,9 +32,11 @@ const state ={
 elInput.addEventListener('click',(e)=>{
   if(e.target.checked){
    state.enabled = true;
+   elAudio.play();
     update();
   }else{
     state.enabled = false;
+   elAudio.pause();
   }
 });
 
@@ -57,4 +61,5 @@ function update() {
    
   })
 }
+
 
