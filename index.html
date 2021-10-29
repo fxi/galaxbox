@@ -11,12 +11,21 @@
       type="text/javascript"
       src="https://api.mapbox.com/mapbox-gl-js/v2.6.0-beta.1/mapbox-gl.js"
     ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/tone/13.0.1/Tone.min.js"
+    ></script>
+
     <link
       rel="stylesheet"
       type="text/css"
       href="https://api.mapbox.com/mapbox-gl-js/v2.6.0-beta.1/mapbox-gl.css"
     />
 
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <style type="text/css">
       html,
       body,
@@ -34,32 +43,79 @@
         background-size: cover;
         background-repeat: no-repeat;
       }
+      .ctrls {
+        position: absolute;
+        left: 40px;
+        top: 40px;
+        border-radius: 10px;
+        color: #999;
+        backdrop-filter: blur(2 px);
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        box-sizing: border-box;
+        opacity: 0.5;
+        transition: opacity ease-in-out 200ms;
+      }
+      .ctrls:hover {
+        opacity: 1;
+      }
+      .ctrl input {
+        display: none;
+      }
 
       .ctrl {
-        position: absolute;
-        left: 20px;
-        top: 20px;
-        border-radius: 10px;
-        padding: 20px;
-        background: #000;
-        color: #999;
-        backdrop-filter: blur(2px);
+        margin: 10px;
+        cursor: pointer;
       }
-      .ctr input:checked {
-        backdrop-filter: blur(0px);
+      .ctrl label {
+        cursor: pointer;
+      }
+      .ctrl i {
+        display: none;
+        font-size: 2em;
+      }
+      .ctrl .ctrl-icon {
+        display: block;
       }
 
-      .ctrl input {
-        accent-color: #777;
+      .ctrl input:not(:checked) ~ label.ctrl-play .ctrl-icon-on {
+        display: block;
+      }
+      .ctrl input:checked ~ label.ctrl-play .ctrl-icon-off {
+        display: block;
+      }
+      .ctrl input:checked ~ label.ctrl-audio .ctrl-icon-on {
+        display: block;
+      }
+      .ctrl input:not(:checked) ~ label.ctrl-audio .ctrl-icon-off {
+        display: block;
       }
     </style>
   </head>
   <body>
     <div id="map" class="mapboxgl-map"></div>
-    <div class="ctrl">
-      <label for="start">start/stop</label> <input id="start" type="checkbox" />
+    <div class="ctrls">
+      <div class="ctrl">
+        <input id="play" type="checkbox" />
+        <label class="ctrl-play" for="play">
+          <i class="ctrl-icon-on ri-play-circle-fill"></i>
+          <i class="ctrl-icon-off ri-stop-circle-fill"></i>
+        </label>
+      </div>
+      <div class="ctrl">
+        <label class="ctrl-reset">
+          <i id="reset" class="ctrl-icon ri-restart-fill"></i>
+        </label>
+      </div>
+      <div class="ctrl">
+        <input id="audio" type="checkbox" checked />
+        <label class="ctrl-audio" for="audio">
+          <i class="ctrl-icon-on ri-volume-up-fill"></i>
+          <i class="ctrl-icon-off ri-volume-mute-fill"></i>
+        </label>
+      </div>
     </div>
-
-    <script type="text/javascript" src="app.js"></script>
+    <script type="module" src="app.js"></script>
   </body>
 </html>
