@@ -73,7 +73,7 @@ export class GalaxBox {
     window.addEventListener('click', gb.handleClick);
   }
 
-   updateSteps() {
+  updateSteps() {
     const gb = this;
     gb._state.steps.length = 0;
     gb._state.reverse = false;
@@ -123,6 +123,14 @@ export class GalaxBox {
   handleClick(e) {
     const gb = this;
     switch (e.target.id) {
+      case 'info':
+        {
+          alert(
+            "Earth is not flat :) This project started as an exploration of projection capabilities of mapbox-gl-js, and I found the Albers projection quite beautiful with the Mapbox's satellite imagery. Added a small animation, a song and that's it. It will be updated to a globe soon !"
+          );
+        }
+
+        break;
       case 'play':
         {
           if (e.target.checked) {
