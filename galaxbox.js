@@ -142,11 +142,11 @@ export class GalaxBox {
           if (e.target.checked) {
             gb._state.audio = true;
             if (gb._state.enabled) {
-              gb._elAudio.start();
+              gb._elAudio.play();
             }
           } else {
             gb._state.audio = false;
-            gb._elAudio.stop();
+            gb._elAudio.pause();
           }
         }
         break;
