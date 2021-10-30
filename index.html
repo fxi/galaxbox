@@ -38,13 +38,18 @@
         background-size: cover;
         background-repeat: no-repeat;
       }
-      .ctrls {
+      .ctrl_container {
         position: absolute;
-        left: 40px;
-        top: 40px;
+        top: 0px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+      .ctrls {
         border-radius: 10px;
         color: #999;
-        backdrop-filter: blur(2 px);
+        backdrop-filter: blur(2px);
         background: rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: center;
@@ -90,25 +95,27 @@
   </head>
   <body>
     <div id="map" class="mapboxgl-map"></div>
-    <div class="ctrls">
-      <div class="ctrl">
-        <input id="play" type="checkbox" />
-        <label class="ctrl-play" for="play">
-          <i class="ctrl-icon-on ri-play-circle-fill"></i>
-          <i class="ctrl-icon-off ri-stop-circle-fill"></i>
-        </label>
-      </div>
-      <div class="ctrl">
-        <label class="ctrl-reset">
-          <i id="reset" class="ctrl-icon ri-restart-fill"></i>
-        </label>
-      </div>
-      <div class="ctrl">
-        <input id="audio" type="checkbox" checked />
-        <label class="ctrl-audio" for="audio">
-          <i class="ctrl-icon-on ri-volume-up-fill"></i>
-          <i class="ctrl-icon-off ri-volume-mute-fill"></i>
-        </label>
+    <div class="ctrl_container">
+      <div class="ctrls">
+        <div class="ctrl">
+          <input id="play" type="checkbox" />
+          <label class="ctrl-play" for="play">
+            <i class="ctrl-icon-on ri-play-circle-fill"></i>
+            <i class="ctrl-icon-off ri-stop-circle-fill"></i>
+          </label>
+        </div>
+        <div class="ctrl">
+          <label class="ctrl-reset">
+            <i id="reset" class="ctrl-icon ri-restart-fill"></i>
+          </label>
+        </div>
+        <div class="ctrl">
+          <input id="audio" type="checkbox" checked />
+          <label class="ctrl-audio" for="audio">
+            <i class="ctrl-icon-on ri-volume-up-fill"></i>
+            <i class="ctrl-icon-off ri-volume-mute-fill"></i>
+          </label>
+        </div>
       </div>
     </div>
     <script type="module" src="app.js"></script>
