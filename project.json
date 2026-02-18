@@ -1,0 +1,9 @@
+{
+  "name": "galaxbox",
+  "description": "Toy Mapbox projection experiment",
+  "tags": ["map", "mapbox", "visualization"],
+  "year_init": 2021,
+  "year_last": 2021,
+  "url": "https://fxi.io/galaxbox/",
+  "featured": false
+}

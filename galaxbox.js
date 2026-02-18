@@ -1,3 +1,6 @@
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 export class GalaxBox {
   constructor(opt) {
     const gb = this;
@@ -14,7 +17,8 @@ export class GalaxBox {
     }
     gb._init = true;
     gb._elAudio = document.createElement('audio');
-    gb._elAudio.src = './audio/red_in_black.mp3';
+    gb._elAudio.src = './audio/sara_s.mp3';
+    //gb._elAudio.src = './audio/red_in_black.mp3';
     gb._elAudio.loop = true;
     gb._state = {
       enabled: false,

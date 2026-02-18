@@ -1,6 +1,7 @@
-import {GalaxBox} from './galaxbox.js';
+import { GalaxBox } from "./galaxbox.js";
 
 window.gb = new GalaxBox({
-   token :'pk.eyJ1IjoiZnJlZGZ4aSIsImEiOiJja3ZiOXlxcjUwNnFwMnZuNjh1aTFwcG0zIn0.nMBltJycIM6sn_kqj8_zcg',
-   selectorMap : 'map'
+  token:
+    "pk.eyJ1IjoiZnJlZGZ4aSIsImEiOiJjbGxmMnA4dzIwbmJhM3FuMWVjMm8zcW91In0.R6SBblqTtTw32KgxJSCBUA",
+  selectorMap: "map",
 });
